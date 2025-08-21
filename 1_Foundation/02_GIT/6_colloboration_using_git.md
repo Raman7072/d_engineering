@@ -98,15 +98,25 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 flowchart TB
     subgraph Top[ ]
         direction LR
-        A[Clone Repo] --> B[Create Branch] --> C[Make Changes] --> D[Commit Changes] --> E[Push to GitHub]
+        A[Clone Repo]
+        B[Create Branch]
+        C[Make Changes]
+        D[Commit Changes]
+        E[Push to GitHub]
     end
 
     subgraph Bottom[ ]
         direction RL
-        J[Pull Updates Locally] <-- I[Delete Branch] <-- H[Merge PR into Main] <-- G[Code Review & Approve] <-- F[Open Pull Request]
+        F[Open Pull Request]
+        G[Code Review & Approve]
+        H[Merge PR into Main]
+        I[Delete Branch]
+        J[Pull Updates Locally]
     end
 
-    E --> F
+    %% Connections
+    A --> B --> C --> D --> E --> F
+    F --> G --> H --> I --> J
 
 ```
 
