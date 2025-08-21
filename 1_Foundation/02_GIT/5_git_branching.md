@@ -90,11 +90,9 @@ Review your commit history to see how branching worked.
 ---
 
 
-#### Here’s a Git Branching Diagram in Markdown (ASCII art style) you can use for quick recall:
-```markdown
-# Git Branching Diagram (ASCII)
+### Git Branching Diagram (ASCII)
 
-# Example: Adding a Contact Form Feature
+#### Example: Adding a Contact Form Feature
 
 (main branch timeline)
 o---o---o---o---o           (main)
@@ -103,14 +101,11 @@ o---o---o---o---o           (main)
         \                   (create new branch: contact-form)
          o---o---o          (contact-form work)
 
-# Merge back into main
+#### Merge back into main
 o---o---o---o---o---M       (main after merge)
                          \
                           o---o---o    (contact-form branch can be deleted)
-```
 
-#### Detailed Flow with Multiple Branches
-```markdown
 (main branch timeline)
 o---o---o---o                (main)
 
@@ -120,19 +115,20 @@ o---o---o---o                (main)
              \
               o (branch: add-license)
 
-# Merging back
+#### Merging back
 o---o---o---o---M---M        (main after merging experiment-layout & add-license)
 
-# Renaming a branch
+#### Renaming a branch
 `fix-stuff` ---> renamed to ---> `better-feature`
 
-# Deleting merged branches
+#### Deleting merged branches
+```bash
 git branch -d experiment-layout
 git branch -d add-license
 ```
 
 #### Branching Workflow Summary
-```markdown
+
 (main) o---o---o
              \
               o---o---o (feature branch)
@@ -146,4 +142,4 @@ git branch -d add-license
 
 # Merge feature next
 (main) o---o---o---M---M
-```
+
