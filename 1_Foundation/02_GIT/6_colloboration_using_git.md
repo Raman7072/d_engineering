@@ -69,14 +69,14 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 
 ### Core Commands
 - `gh auth` → Authenticate GitHub & Git
-- gh browse → Open repos/issues/PRs in browser
-- gh codespace → Manage Codespaces
-- gh gist → Manage gists
-- gh issue → Manage issues
-- gh pr → Manage pull requests
-- gh project → Manage GitHub projects
-- gh release → Manage releases
-- gh repo → Manage repositories
+- `gh browse` → Open repos/issues/PRs in browser
+- `gh codespace` → Manage Codespaces
+- `gh gist` → Manage gists
+- `gh issue` → Manage issues
+- `gh pr` → Manage pull requests
+- `gh project` → Manage GitHub projects
+- `gh release` → Manage releases
+- `gh repo` → Manage repositories
 ✅ Helps automate and speed up GitHub workflows.
 
 ## 🏁 Wrap-Up
@@ -95,21 +95,11 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 ## 🔄 Git & GitHub Collaboration Workflow
 
 ```mermaid
-block-beta
-  columns 5
-  A B C D E
+flowchart LR
+    A[Clone Repo] --> B[Create Branch] --> C[Make Changes] --> D[Commit Changes] --> E[Push to GitHub]
 
-  J I H G F
+    J[Pull Updates Locally] <- I[Delete Branch] <- H[Merge PR into Main] <- G[Code Review & Approve] <- F[Open Pull Request]
 
-    A[Clone Repo] --> B[Create Branch]
-    B --> C[Make Changes]
-    C --> D[Commit Changes]
-    D --> E[Push Branch to GitHub]
-    E --> F[Open Pull Request]
-    F --> G[Code Review & Discussion]
-    G --> H[Merge PR into Main]
-    H --> I[Delete Branch]
-    I --> J[Pull Updates Locally]
 ```
 
 ### ✅ This workflow visually explains how developers collaborate:
