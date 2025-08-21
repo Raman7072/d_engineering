@@ -94,29 +94,28 @@ Review your commit history to see how branching worked.
 
 #### Example: Adding a Contact Form Feature
 
-(main branch timeline)
-o---o---o---o---o           (main)
-
+       (main branch timeline)       
+       o---o---o---o---o           (main)
+       
        \
         \                   (create new branch: contact-form)
          o---o---o          (contact-form work)
 
 #### Merge back into main
-o---o---o---o---o---M       (main after merge)
+       o---o---o---o---o---M       (main after merge)
                          \
                           o---o---o    (contact-form branch can be deleted)
+       (main branch timeline)
+       o---o---o---o                (main)
+       
+              \                     (branch: experiment-layout)
+               o---o (2 commits)
 
-(main branch timeline)
-o---o---o---o                (main)
-
-       \                     (branch: experiment-layout)
-        o---o (2 commits)
-
-             \
-              o (branch: add-license)
+                    \
+                     o (branch: add-license)
 
 #### Merging back
-o---o---o---o---M---M        (main after merging experiment-layout & add-license)
+       o---o---o---o---M---M        (main after merging experiment-layout & add-license)
 
 #### Renaming a branch
 `fix-stuff` ---> renamed to ---> `better-feature`
@@ -129,17 +128,17 @@ git branch -d add-license
 
 #### Branching Workflow Summary
 
-(main) o---o---o
-             \
-              o---o---o (feature branch)
-                     \
-                      o---o (bug-fix branch)
+       (main) o---o---o
+                    \
+                     o---o---o (feature branch)
+                            \
+                             o---o (bug-fix branch)
 
 # Merge bug-fix first
-(main) o---o---o---M
-                      \
-                       o---o (feature branch)
+       (main) o---o---o---M
+                             \
+                              o---o (feature branch)
 
 # Merge feature next
-(main) o---o---o---M---M
+       (main) o---o---o---M---M
 
