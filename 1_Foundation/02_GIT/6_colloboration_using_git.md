@@ -97,9 +97,14 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 ```mermaid
 flowchart LR
     A[Clone Repo] --> B[Create Branch] --> C[Make Changes] --> D[Commit Changes] --> E[Push to GitHub]
-
-    J[Pull Updates Locally] <- I[Delete Branch] <- H[Merge PR into Main] <- G[Code Review & Approve] <- F[Open Pull Request]
-
+    E --> F[Open Pull Request]
+    F --> G[Code Review & Approve]
+    G --> H[Merge PR into Main]
+    H --> I[Delete Branch]
+    I --> J[Pull Updates Locally]
+    
+    %% Curve back to left side to avoid scrolling
+    J -.-> A
 ```
 
 ### ✅ This workflow visually explains how developers collaborate:
