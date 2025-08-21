@@ -102,9 +102,6 @@ flowchart LR
     G --> H[Merge PR into Main]
     H --> I[Delete Branch]
     I --> J[Pull Updates Locally]
-    
-    %% Curve back to left side to avoid scrolling
-    J -.-> A
 ```
 
 ### ✅ This workflow visually explains how developers collaborate:
