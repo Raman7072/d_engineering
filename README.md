@@ -2,7 +2,7 @@
 
 
 ```mermaid
-flowchart TD
+graph
     A[Foundation] --> B[Full Stack Python]
     B --> C[Data Engineering]
 ```
