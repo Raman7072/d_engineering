@@ -99,7 +99,7 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 
 ```mermaid
   flowchart TD
-      A[Clone Repo] --> B[Create Branch]
+    A[Clone Repo] --> B[Create Branch]
       B --> C[Make Changes]
       C --> D[Commit Changes]
       D --> E[Push Branch to GitHub]
