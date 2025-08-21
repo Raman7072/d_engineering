@@ -1,7 +1,7 @@
 # d_engineering
 
 
-```mermain
+```mermaid
 flowchart TD
     A[Foundation] --> B[Full Stack Python]
     B --> C[Data Engineering]
