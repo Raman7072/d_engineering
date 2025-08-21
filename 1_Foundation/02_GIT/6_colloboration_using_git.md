@@ -95,9 +95,6 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 ## 🔄 Git & GitHub Collaboration Workflow
 
 ```mermaid
-# 🔄 Git & GitHub Collaboration Workflow
-
-```mermaid
   flowchart TD
     A[Clone Repo] --> B[Create Branch]
       B --> C[Make Changes]
