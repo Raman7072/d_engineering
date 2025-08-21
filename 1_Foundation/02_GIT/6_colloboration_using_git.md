@@ -95,28 +95,19 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 ## 🔄 Git & GitHub Collaboration Workflow
 
 ```mermaid
-flowchart TB
-    subgraph Top[ ]
-        direction LR
-        A[Clone Repo]
-        B[Create Branch]
-        C[Make Changes]
-        D[Commit Changes]
-        E[Push to GitHub]
-    end
+# 🔄 Git & GitHub Collaboration Workflow
 
-    subgraph Bottom[ ]
-        direction RL
-        F[Open Pull Request]
-        G[Code Review & Approve]
-        H[Merge PR into Main]
-        I[Delete Branch]
-        J[Pull Updates Locally]
-    end
-
-    %% Connections
-    A --> B --> C --> D --> E --> F
-    F --> G --> H --> I --> J
+```mermaid
+flowchart TD
+    A[Clone Repo] --> B[Create Branch]
+    B --> C[Make Changes]
+    C --> D[Commit Changes]
+    D --> E[Push Branch to GitHub]
+    E --> F[Open Pull Request]
+    F --> G[Code Review & Discussion]
+    G --> H[Merge PR into Main]
+    H --> I[Delete Branch]
+    I --> J[Pull Updates Locally]
 
 ```
 
