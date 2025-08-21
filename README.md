@@ -2,7 +2,7 @@
 
 
 ```mermain
-graph
-A[Foundation] --> B[Full Stack Python]
-B --> C[Data Engineering]
+flowchart TD
+    A[Foundation] --> B[Full Stack Python]
+    B --> C[Data Engineering]
 ```
