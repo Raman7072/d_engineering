@@ -2,7 +2,7 @@
 
 
 ```mermain
-    graph
-        1[Foundation] --> 2[Full Stack Python]
-            B --> C[Data Engineering]
+graph
+1[Foundation] --> 2[Full Stack Python]
+2 --> 3[Data Engineering]
 ```
