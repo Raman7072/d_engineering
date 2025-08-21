@@ -95,7 +95,7 @@ GitHub provides a CLI tool (`gh`) for managing resources via commands.
 ## 🔄 Git & GitHub Collaboration Workflow
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Clone Repo] --> B[Create Branch]
     B --> C[Make Changes]
     C --> D[Commit Changes]
@@ -116,19 +116,3 @@ flowchart TD
 5. Open a PR
 6. Review → Merge → Delete branch
 7. Pull updates locally
-
-```mermaid
-sequenceDiagram
-    participant Dev as Developer
-    participant Git as Git (Local)
-    participant Hub as GitHub
-
-    Dev->>Git: git clone repo
-    Dev->>Git: git checkout -b feature
-    Dev->>Git: git commit changes
-    Git->>Hub: git push origin feature
-    Dev->>Hub: Open Pull Request
-    Hub->>Dev: Request Review
-    Dev->>Hub: Review & Merge PR
-    Hub->>Git: git pull origin main
-```
