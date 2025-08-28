@@ -86,24 +86,25 @@ Typing a URL triggers DNS, load balancers, routers, controllers, and databases *
 ```mermaid
 flowchart TD
 
-A[Type URL in Browser] --> B[DNS Lookup<br/>(Domain → IP Address)]
+A[Type URL in Browser] --> B[DNS Lookup: Domain → IP Address]
 B --> C[Send Request to Server's IP]
-C --> D[Load Balancer<br/>(Distributes Traffic)]
-D --> E[Cache Check<br/>Is Response Already Stored?]
+C --> D[Load Balancer: Distributes Traffic]
+D --> E{Cache Check: Already Stored?}
 
 E -- Yes --> F[Return Cached Page]
 E -- No --> G[Backend Processing]
 
-G --> H[Router<br/>(Understands Request Type)]
-H --> I[Controller<br/>(Prepares Logic & Response)]
-I --> J[Database<br/>(Fetches Data/Content)]
+G --> H[Router: Understands Request]
+H --> I[Controller: Prepares Logic & Response]
+I --> J[Database: Fetches Data/Content]
 J --> I
 I --> K[Generate Response Page]
 
 F --> L[Response Sent to Browser]
 K --> L[Response Sent to Browser]
 
-L --> M[Browser Renders Page<br/>HTML + CSS + JS → Visible Website]
+L --> M[Browser Renders Page: HTML + CSS + JS]
+
 ```
 
 This diagram clearly shows:  
