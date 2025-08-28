@@ -21,13 +21,13 @@ When:
 
 ## 🚧 What’s Blocking It?
 1. Private Local IP
-- Local IP addresses are hidden from the internet.
+  - Local IP addresses are hidden from the internet.
 2. NAT (Network Address Translation)
-- Acts like a gatekeeper, mapping private addresses to the public internet.
-- Prevents direct access from outside without explicit configuration.
+  - Acts like a gatekeeper, mapping private addresses to the public internet.
+  - Prevents direct access from outside without explicit configuration.
 3. Firewall/Router Rules
-- Block incoming requests from unknown networks.
-- Protects your system from hackers.
+  - Block incoming requests from unknown networks.
+  - Protects your system from hackers.
 ---
 
 ## 🍕 Analogy: Pizza Delivery
