@@ -98,7 +98,7 @@ Cloud computing powers apps, websites, and online services around the world. It�
 # ☁️ Cloud Service Models
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Cloud Computing] --> B[IaaS: Infrastructure as a Service]
     A --> C[PaaS: Platform as a Service]
     A --> D[SaaS: Software as a Service]
