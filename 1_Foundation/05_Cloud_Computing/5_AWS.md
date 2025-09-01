@@ -120,7 +120,7 @@ The **AWS CLI** (Command Line Interface) is your gateway to AWS.
 ---
 
 ## ☁️ AWS Mindmap
-
+```
 AWS (Amazon Web Services)
 │
 ├── 🌐 Why Cloud?
@@ -188,7 +188,7 @@ AWS (Amazon Web Services)
     ├── Scalability without fear
     ├── Global adoption
     └── Focus on product, not infrastructure
-
+```
 ---
 
 ## ✅ Key Takeaways
