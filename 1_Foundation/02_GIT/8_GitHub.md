@@ -139,7 +139,7 @@ subgraph Setup
 S1[Install Git]
 S2[Create GitHub Account]
 S3[Create Repository]
-S4[Setup SSH Keys (optional)]
+S4[Setup SSH Keys - optional]
 S1 --> S2 --> S3 --> S4
 end
 ```
