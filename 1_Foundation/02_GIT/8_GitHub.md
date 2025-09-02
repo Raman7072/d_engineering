@@ -128,7 +128,7 @@ git push origin branch-name
 flowchart TD
 
 A[Write/Update Code] --> B[git add .]
-B --> C[git commit -m "message"]
+B --> C[git commit -m \"message\"]
 C --> D[git push origin main]
 D -->|Uploads| E[GitHub Repository]
 
