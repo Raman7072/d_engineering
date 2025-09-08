@@ -47,7 +47,7 @@ Data engineers must also master visualization because:
 ## ✅ Where Visualization Fits in the Data Pipeline
 
 ### Data engineering workflow:
-```
+
 [ Raw Data ]
 ↓
 [ Ingest & Clean ]
@@ -57,7 +57,7 @@ Data engineers must also master visualization because:
 [ Model / Aggregate ]
 ↓
 [ Visualization Layer ]
-```
+---
 
 
 - Data engineers work on everything up to the visualization layer but often:
