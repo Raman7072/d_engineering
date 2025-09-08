@@ -47,16 +47,31 @@ Data engineers must also master visualization because:
 ## ✅ Where Visualization Fits in the Data Pipeline
 
 ### Data engineering workflow:
-```
-              [ Raw Data ]
-                     ↓
-            [ Ingest & Clean ]
-                     ↓
-[ Store in Warehouse (e.g., Postgres, BigQuery) ]
-                     ↓
-            [ Model / Aggregate ]
-                     ↓
-            [ Visualization Layer ]
+
+```text
+   ┌───────────┐
+   │ Raw Data  │
+   └────┬──────┘
+        ↓
+   ┌─────────────┐
+   │ Ingest &    │
+   │ Clean       │
+   └────┬────────┘
+        ↓
+   ┌────────────────────────────┐
+   │ Store in Warehouse         │
+   │ (e.g., Postgres, BigQuery) │
+   └────┬───────────────────────┘
+        ↓
+   ┌───────────────┐
+   │ Model /       │
+   │ Aggregate     │
+   └────┬──────────┘
+        ↓
+   ┌────────────────┐
+   │ Visualization  │
+   │ Layer          │
+   └────────────────┘
 ```
 
 
