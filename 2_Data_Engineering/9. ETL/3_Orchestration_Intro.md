@@ -66,10 +66,10 @@ Used by tools like **Apache Airflow**.
 
 Example flow:
 ```mermaid
-    Flowchart LR
+    flowchart LR
         1[Extract] --> 2[Transform]
         2 --> 3[Load]
-        3 --> [Report]
+        3 --> 4[Report]
 ```
 
 
