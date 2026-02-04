@@ -65,6 +65,9 @@ Used by tools like **Apache Airflow**.
 - Edges define dependencies
 
 Example flow:
+
+| Extract | Transform | Load | Report |
+
 ```mermaid
     flowchart LR
         1[Extract] --> 2[Transform]
