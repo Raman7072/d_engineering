@@ -67,9 +67,9 @@ Used by tools like **Apache Airflow**.
 Example flow:
 ```mermaid
     Flowchart LR
-        1. [Extract] → 2. [Transform]
-        2. [Transform] → 3. [Load]
-        3. [Load] → 4. [Report]
+        1[Extract] --> 2[Transform]
+        2 --> 3[Load]
+        3 --> [Report]
 ```
 
 
