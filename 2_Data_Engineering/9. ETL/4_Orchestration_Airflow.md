@@ -35,7 +35,7 @@ Each DAG defines:
 - Dependencies between tasks
 
 ### Example Workflow
-```
+```python
 [Extract CSV] >> [Clean Data] >> [Load to DB] >> [Send Slack Alert]
 ```
 
@@ -179,7 +179,7 @@ Sensors make pipelines reactive instead of purely time-based.
 
 ### ✅ Answers to the “Try This Out!” Section
 #### 1️⃣ Sketch Your Morning Routine as a DAG
-
+```
 Wake Up
    ↓
 Brush Teeth
@@ -187,6 +187,7 @@ Brush Teeth
 Make Coffee
    ↓
 Check Emails
+```
 
 In Airflow-style dependency:
 ```python
