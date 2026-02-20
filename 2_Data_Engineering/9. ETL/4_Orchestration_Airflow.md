@@ -205,7 +205,7 @@ Workflow:
 4. Email manager
 
 Airflow-style:
-```pthon
+```python
 pull_logs >> calculate_time >> generate_report >> email_manager
 ```
 
