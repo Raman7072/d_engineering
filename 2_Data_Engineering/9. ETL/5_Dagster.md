@@ -1,208 +1,266 @@
-# ETL Workflow Orchestration with Dagster  
-## Data Engineering Course
+# ETL Workflow Orchestration with Dagster
+
+A practical introduction to asset-based data orchestration using Dagster.
+
+This repository demonstrates how to build modern ETL pipelines using Dagster’s asset-based approach instead of traditional task-based orchestration.
 
 ---
 
-# Dagster – A Modern Approach to Data Workflows
+## 📌 Overview
 
-## What is Dagster?
+Traditional orchestration tools focus on *tasks*.
 
-Dagster is a modern data orchestration tool designed specifically for data engineers.
+Dagster focuses on *data assets*.
 
-Traditional orchestrators like Airflow think in terms of **tasks** (run this script, then run that script).  
-Dagster thinks in terms of **assets**.
+An asset is any meaningful data output in your pipeline, such as:
 
-An asset is any meaningful data output your pipeline produces, such as:
+- A database table
+- A cleaned dataset
+- A report
+- A machine learning model
+- A dashboard dataset
 
-- A database table  
-- A cleaned dataset  
-- A machine learning model  
-- A file  
-- A dashboard  
-- A report  
+Dagster understands:
+- How assets are created
+- What they depend on
+- When they need to be refreshed
+- Whether they are up-to-date
 
-Instead of managing tasks, Dagster manages the lifecycle of these assets.
-
-You can think of Dagster as a system that understands how your data is created, how it depends on other data, and when it needs to be refreshed.
-
-For example:
-
-> "I want my `daily_sales` table to always be up-to-date.  
-> Here’s how it’s created.  
-> Here’s what it depends on.  
-> If any of those inputs change, recompute it."
-
-That is the core philosophy of Dagster.
+This allows data teams to manage data workflows more reliably and transparently.
 
 ---
 
-# Asset-Based Workflow
-
-This is the biggest difference between Dagster and traditional orchestration tools.
-
-In Dagster, you define **assets**, such as:
-
-- `raw_orders_table`
-- `cleaned_sales_data`
-- `weekly_summary_report`
-
-For each asset, you define:
-
-1. How it is generated  
-2. What other assets it depends on  
-3. When it should be updated  
-
-Dagster then tracks:
-
-- Data lineage (where the data came from)
-- Freshness (how recent the data is)
-- State (whether it is up-to-date or outdated)
-
----
-
-## Why Asset-Based Thinking Is Powerful
-
-- If an upstream input changes, only the dependent downstream assets are recomputed.
-- Unnecessary tasks are not executed.
-- It aligns with how data teams actually think — in terms of tables and outputs, not scripts.
-
-Instead of thinking:
-> "Did this Python script run?"
-
-You think:
-> "Is my sales dataset up-to-date?"
-
-That is a much more meaningful question.
-
----
-
-# Transparency and Observability
-
-Dagster places strong emphasis on observability.
-
-Observability means:
-- You can clearly see what happened.
-- You understand why it happened.
-- You can debug issues easily.
-
-Using Dagster’s UI, you can:
-
-- View your entire pipeline as a graph of assets
-- Click on any run to inspect inputs, outputs, and logs
-- See exactly why an asset ran (or why it didn’t)
-- Check when each asset was last materialized (updated)
-
-This eliminates guesswork.
+## 🧠 Why Asset-Based Orchestration?
 
 Instead of asking:
-> "Why didn’t the weekly report update?"
 
-You check the asset history and logs directly.
+> "Did my script run?"
 
----
+You ask:
 
-# Example: Weekly Product Report Pipeline
+> "Is my data up-to-date?"
 
-Consider a pipeline that:
+Benefits:
 
-1. Pulls data from Shopify and Stripe  
-2. Cleans and combines it into a unified sales dataset  
-3. Generates a top-selling products report  
-4. Sends the report via email  
-
-In Dagster, each step would be defined as an asset.
-
-Dagster would:
-
-- Track dependencies between them
-- Automatically determine execution order
+- Automatic dependency tracking
 - Recompute only what is necessary
-- Maintain a full history of updates
-
-This is similar to version control, but for data outputs.
-
----
-
-# Limitations of Dagster
-
-Dagster is powerful, but no tool is perfect.
-
-Here are some trade-offs:
-
-## 1. Different Mental Model
-If you are used to task-based systems like Airflow, asset-based thinking may take time to understand.
-
-## 2. Growing Ecosystem
-Dagster is production-ready, but some integrations may not be as plug-and-play as Airflow.
-
-## 3. Smaller Community (for now)
-It is not as widely adopted yet, so some advanced topics may have fewer community examples.
-
-That said, the documentation is strong and the community is active.
+- Built-in data lineage
+- Strong observability
+- Easier debugging
 
 ---
 
-# Practice Exercises
+## 🏗 Example Pipeline
 
-To understand Dagster better, try the following:
+This project demonstrates a simple ETL workflow:
 
-## 1. Sketch Your Data Assets
-Draw your current or past project as assets instead of tasks.
+1. Extract raw sales data  
+2. Transform it into cleaned sales data  
+3. Generate a weekly summary report  
 
-Example:
-- `raw_logs`
-- `cleaned_logs`
-- `user_metrics`
-- `monthly_dashboard`
+Each step is defined as a Dagster asset.
 
-Connect them based on dependencies.
+Dagster automatically:
+- Determines execution order
+- Tracks dependencies
+- Logs materializations
+- Recomputes downstream assets only when required
 
-## 2. Identify Freshness Requirements
-Ask yourself:
-- Which tables must always stay updated?
-- Which reports depend on daily refresh?
-- What should automatically recompute if source data changes?
+---
 
-## 3. Explore Real Examples
-Search for:
+## 📂 Project Structure
+
 ```
-Dagster asset-based orchestration example
+dagster-etl-project/
+│
+├── assets/
+│   ├── raw_sales.py
+│   ├── cleaned_sales.py
+│   └── weekly_report.py
+│
+├── definitions.py
+├── requirements.txt
+└── README.md
 ```
-Review how assets are defined in real projects.
-
-## 4. Compare with Airflow
-Create a simple comparison:
-
-| Concept      | Airflow         | Dagster        |
-|--------------|----------------|----------------|
-| Core Unit    | Task           | Asset          |
-| Focus        | Execution Flow | Data Outputs   |
-| Optimization | Manual logic   | Dependency-aware |
-
-Think about when each tool might be more appropriate.
-
-## 5. Identify Automation Opportunities
-List three data deliverables you would like to automatically track and refresh, such as:
-
-- Sales dashboard
-- Monthly finance report
-- Machine learning training dataset
 
 ---
 
-# Learn More
+## ⚙️ Prerequisites
 
-- Dagster Official Documentation  
-- Dagster GitHub Examples  
+- Python 3.9+
+- Basic understanding of ETL concepts
+- Familiarity with Python
 
 ---
 
-# Final Takeaway
+## 🔧 Installation
 
-Dagster shifts orchestration from:
-> "Did my code run?"
+### 1. Clone the Repository
 
-to:
-> "Is my data correct, fresh, and trustworthy?"
+```
+git clone https://github.com/your-username/dagster-etl-project.git
+cd dagster-etl-project
+```
 
-That shift aligns orchestration with what truly matters in data engineering: reliable, observable, and reproducible data assets.
+### 2. Create Virtual Environment
+
+```
+python -m venv venv
+source venv/bin/activate        # macOS/Linux
+venv\Scripts\activate           # Windows
+```
+
+### 3. Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+
+Example `requirements.txt`:
+
+```
+dagster
+dagster-webserver
+pandas
+```
+
+---
+
+## 🚀 Minimal Dagster Example
+
+### assets/raw_sales.py
+
+```python
+from dagster import asset
+import pandas as pd
+
+@asset
+def raw_sales_data():
+    data = {
+        "product": ["A", "B", "C"],
+        "sales": [100, 200, 150]
+    }
+    return pd.DataFrame(data)
+```
+
+---
+
+### assets/cleaned_sales.py
+
+```python
+from dagster import asset
+import pandas as pd
+
+@asset
+def cleaned_sales_data(raw_sales_data):
+    df = raw_sales_data.copy()
+    df["sales"] = df["sales"] * 1.1
+    return df
+```
+
+---
+
+### assets/weekly_report.py
+
+```python
+from dagster import asset
+
+@asset
+def weekly_summary_report(cleaned_sales_data):
+    total_sales = cleaned_sales_data["sales"].sum()
+    return {"weekly_total_sales": total_sales}
+```
+
+---
+
+### definitions.py
+
+```python
+from dagster import Definitions
+from assets.raw_sales import raw_sales_data
+from assets.cleaned_sales import cleaned_sales_data
+from assets.weekly_report import weekly_summary_report
+
+defs = Definitions(
+    assets=[
+        raw_sales_data,
+        cleaned_sales_data,
+        weekly_summary_report
+    ]
+)
+```
+
+---
+
+## ▶️ Running Dagster
+
+Start Dagster UI:
+
+```
+dagster dev
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:3000
+```
+
+You will see:
+
+- Asset graph visualization
+- Dependency relationships
+- Execution logs
+- Materialization history
+
+---
+
+## 🔍 Observability Features
+
+Dagster allows you to:
+
+- Visualize asset lineage
+- Inspect run logs
+- Check freshness
+- Debug failures
+- Re-materialize specific assets
+
+This removes guesswork from debugging data pipelines.
+
+---
+
+## ⚖️ Dagster vs Airflow (Quick Comparison)
+
+| Feature            | Airflow        | Dagster        |
+|-------------------|---------------|---------------|
+| Core Concept       | Task          | Asset         |
+| Primary Focus      | Execution     | Data Outputs  |
+| Dependency Logic   | Manual        | Automatic     |
+| Observability      | Basic         | Advanced UI   |
+
+---
+
+## 🧪 Practice Ideas
+
+- Add a database source instead of hardcoded data
+- Add scheduling
+- Add data quality checks
+- Add partitioned assets
+- Deploy to production environment
+
+---
+
+## 📚 Learn More
+
+- Official Dagster Documentation  
+- Dagster GitHub Repository  
+
+---
+
+## 🎯 Final Takeaway
+
+Dagster shifts orchestration from managing scripts to managing data.
+
+Instead of focusing on code execution, you focus on data reliability, freshness, and lineage.
+
+That mindset aligns directly with modern data engineering best practices.
