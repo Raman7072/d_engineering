@@ -97,14 +97,14 @@ dagster-etl-project/
 
 ### 1. Clone the Repository
 
-```
+```bash
 git clone https://github.com/your-username/dagster-etl-project.git
 cd dagster-etl-project
 ```
 
 ### 2. Create Virtual Environment
 
-```
+```python
 python -m venv venv
 source venv/bin/activate        # macOS/Linux
 venv\Scripts\activate           # Windows
@@ -112,13 +112,13 @@ venv\Scripts\activate           # Windows
 
 ### 3. Install Dependencies
 
-```
+```python
 pip install -r requirements.txt
 ```
 
 Example `requirements.txt`:
 
-```
+```bash
 dagster
 dagster-webserver
 pandas
@@ -202,7 +202,7 @@ dagster dev
 
 Open in browser:
 
-```
+```url
 http://127.0.0.1:3000
 ```
 
